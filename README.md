@@ -1,8 +1,8 @@
 # High-Speed-Train-Reservation-System
 This high speed train reservation is created to help train station to handle their daily operation of recording data through a kiosk system. Users can buy a ticket, edit information, cancel reservation and display the details of the train from the reference number that is given. All of the transactions made by the user for every train will be recorded in a .txt file.
 
-# ADT Specifications
-### Data Items
+# ADT specifications
+### Data items
 A set of string and integer data. Each string data is the name of the customer, name of destination, departure place and time of arrival and departure. Each integer data is the customer’s age, seat number, number of container and train number.
 
 ### Specifications
@@ -15,7 +15,7 @@ A set of string and integer data. Each string data is the name of the customer, 
 | void addCustomer()                                                                   | None                                                                                                                                                                                                                                                                                                                                                                                                             | New customer's details are added to the system.                                                                                                                                     |
 | void editCustomer()                                                                  | Customers list is not empty.                                                                                                                                                                                                                                                                                                                                                                                     | Customer's details such as their name and change of seat is edited.                                                                                                                 |
 | void deleteCustomer (int refernum)                                                   | Customers and references lists are not empty.                                                                                                                                                                                                                                                                                                                                                                    | Customer's booking is deleted if the customer decides to cancel the booking. The seats that are originally booked becomes empty and is available to others.                         |
-| void display()                                                                       | Customers list is not empty.                                                                                                                                                                                                                                                                                                                                                                                     | All customers? details will be displayed.                                                                                                                                           |
+| void display()                                                                       | Customers list is not empty.                                                                                                                                                                                                                                                                                                                                                                                     | All customers\' details will be displayed.                                                                                                                                           |
 | void displayReference()                                                              | Reference list is not empty.                                                                                                                                                                                                                                                                                                                                                                                     | All previous transaction history will be displayed.                                                                                                                                 |
 | void searchCustomer (int refernum)                                                   | Customers and reference list is not empty.                                                                                                                                                                                                                                                                                                                                                                       | A particular customer's details will be displayed.                                                                                                                                  |
 | void sortCustomer()                                                                  | Customers list is not empty.                                                                                                                                                                                                                                                                                                                                                                                     | Sorts customers in according to their seat numbers.                                                                                                                                 |
@@ -25,9 +25,9 @@ A set of string and integer data. Each string data is the name of the customer, 
 | void availableSeat()                                                                 | Customer list is not empty.                                                                                                                                                                                                                                                                                                                                                                                      | Display which seats in the train are taken. If none of the seats are taken it will ask the user to enter whichever seat he/she likes varies from first, business and economy class. |
 | void enqueue(string first, string last, int umur, string id, int seat, int paid)     | None                                                                                                                                                                                                                                                                                                                                                                                                             | Adds a new reference node into the reference list as transaction history.                                                                                                           |
 | void dequeue()                                                                       | None                                                                                                                                                                                                                                                                                                                                                                                                             | Removes all of the transaction history.                                                                                                                                             |
-| void showBooking(int refernum)                                                       | None                                                                                                                                                                                                                                                                                                                                                                                                             | A customer?s booking will be displayed.                                                                                                                                             |
+| void showBooking(int refernum)                                                       | None                                                                                                                                                                                                                                                                                                                                                                                                             | A customer\'s booking will be displayed.                                                                                                                                             |
 
-# Implementation Details
+# Implementation details
 The data structure that we use in our program are **linked list**, **queue**, and **bubble sort**.
 1. Linked list  
 In our high-speed train reservation system, we create two linked list, which are lists of customer and reference. For the linked list of customers, we have a \*next pointer in every customer node that points to the next node. In a customer node, there will be the personal details of the customer, seat number and the \*next pointer. For the linked list of reference, there will be the details of the customers after making transactions, reference number and a \*next pointer. We choose linked list over arrays to make both of the lists because it is easier to do any insertions or deletions at any point in the list. In arrays, we can only put one type of data type, but in linked list, we can insert a collection of different data types in a node such as string for first name and integer for age. So, to access the details of the customer, users have to key in the reference number, and the program will have a \*curr pointer to search from the beginning of the list to get the details of the customer.
@@ -41,6 +41,36 @@ For the sort function, we have implemented bubble sort in our program. In the so
 # Screenshot
 ### Interface of program
 ![screenshot1](/Screenshots/ss_1.PNG?raw=true)
+This system only has one type of user, which is the person who is using the kiosk. The four functions that the user can use are:
+- Purchase train ticket
+- Cancel reservation
+- Modify ticket information
+- Display ticket details
+
+### Sample input & output
+1. If the user chooses the 'buy ticket' option, the system will show a list of the available train services. The user can then choose the train service that they want by entering the alphabet (A/B/C in this case).
+![screenshot1](/Screenshots/ss_2.png?raw=true)
+
+2. After entering the user's train of choice, the user is prompted to enter personal details (name, age, ID number).
+![screenshot1](/Screenshots/ss_3.png?raw=true)
+
+3. The user is then prompted to choose a seat. There are three choices, first class, business class and economy class. The system shows the user which seat is occupied/booked by others. In this case, train A has no passenger yet, so the user can choose any seat.
+![screenshot1](/Screenshots/ss_4.png?raw=true)
+
+4. After choosing the seat, a summary of the booking is shown. A reference number is given to user for further usage (explained later). If the user wants to buy more tickets, press Y. If the user decides to return to the main menu, press N.
+![screenshot1](/Screenshots/ss_5.png?raw=true)
+
+5. If the user chooses the 'cancel reservation' option, the user is asked to pay an extra fee to cancel the reservation. The user is then prompted to key in the train booked and the reference number.
+![screenshot1](/Screenshots/ss_6.png?raw=true)
+
+6. The system shows a summary to show that the user has cancelled the booking. This seat number is intentionally set to 99 to show that the booking is cancelled. 
+![screenshot1](/Screenshots/ss_7.png?raw=true)
+
+7. If the user chooses the 'modify ticket information' option, the user is prompted to key in the train details followed by the reference number. The user can then choose to edit either the first name, last name, age, ID or seat.
+![screenshot1](/Screenshots/ss_8.png?raw=true)
+
+8. If the user chooses the 'display ticket details' option, the reference number has to be entered followed by the train that is booked by the user. The details of the booking will then be shown.
+![screenshot1](/Screenshots/ss_9.png?raw=true)
 
 # Authors
 Joey Lim, Y.F.,Tan, C.R.,Teh. 
