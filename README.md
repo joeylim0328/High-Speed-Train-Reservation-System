@@ -29,13 +29,13 @@ A set of string and integer data. Each string data is the name of the customer, 
 
 # Implementation Details
 The data structure that we use in our program are **linked list**, **queue**, and **bubble sort**.
-1. Linked list
+1. Linked list  
 In our high-speed train reservation system, we create two linked list, which are lists of customer and reference. For the linked list of customers, we have a \*next pointer in every customer node that points to the next node. In a customer node, there will be the personal details of the customer, seat number and the \*next pointer. For the linked list of reference, there will be the details of the customers after making transactions, reference number and a \*next pointer. We choose linked list over arrays to make both of the lists because it is easier to do any insertions or deletions at any point in the list. In arrays, we can only put one type of data type, but in linked list, we can insert a collection of different data types in a node such as string for first name and integer for age. So, to access the details of the customer, users have to key in the reference number, and the program will have a \*curr pointer to search from the beginning of the list to get the details of the customer.
 
-2. Queue
+2. Queue  
 Queue is used using pointers. Once we have added a customer in the program, the program will enqueue the customer in the linked list of reference that contains the transaction (buy ticket, edit details, delete details) of all of the customers. We also have a dequeue function that will dequeue the transactions before we exit the program to clear out the memory in the program. We use queue in our program because it operates in a First In First Out context. Queue can enqueue the customer’s references in ascending order and dequeue them ascendingly when the program is terminated.
 
-3. Bubble sort
+3. Bubble sort  
 For the sort function, we have implemented bubble sort in our program. In the sortCustomer() function, we will sort the customer based on their seat numbers. For example, if Customer A chooses seat 3 first and Customer B chooses seat 2 after that, the sort function will swap their positions to make sure Customer B is before Customer A. We choose bubble sort because it is easier to implement and understand.
 
 # Screenshot
