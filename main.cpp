@@ -21,7 +21,7 @@ int main()
 	char choice_payment;
 	char answer;
 	//Train details can be modified here//
-	Train A("KL", "IPOH", "1.00PM", "2.00PM");
+	Train A("Delhi", "IPOH", "1.00PM", "2.00PM");
 	Train B("KL", "MELAKA", "1.00PM", "2.00PM");
 	Train C("KL", "JOHOR", "1.00PM", "2.00PM");
 
